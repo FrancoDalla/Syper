@@ -56,17 +56,44 @@
 		\subsection{zero trust}
 			Refiere a una estrategia de seguridad de red basada en la filosofía de que ninguna persona o dispositivo dentro o fuera de la red de una organización debe tener acceso para conectarse a sistemas hasta que se considere explícitamente necesario. 
 	\section{Busque noticias sobre algún incidente de seguridad de la información de público conocimiento. Identifique cuál fue el bien afectado, qué error permitió el problema y qué se podría haber realizado para evitar el mismo.}
-	Recientemente ocurrio un leak bastante grande a una empresa desarrolladora de videojuegos llamada Gamefreak.
-	Esta empresa es conocida por ser la desarrolladora de los videojuegos de Pokemón. Entre todo el material filtrado se encontraba: Arte conceptual, prototipos de videojuegos, herramientas de desarrollo, repositorios utilizados por la empresa; información sobre futuros juegos, etc. mediante esta filtración en especifico también se conoció sobre los planes de Nintendo (empresa con la que están muy relacionados) sobre el plan de crear una nueva consola de videojuegos que reemplace a la Nintendo Switch.
-	Este ejemplo funciona para relacionarlo con el concepto de confidencialidad ya que se divulgo mucho material que no se planeaba fuera público y que podría afectar a la empresa en imagen o economicamente.
-	Se teoriza que la filtración se dio por un acceso no permitido a un servidor de archivos del que hacía uso la empresa. El acceso al mismo se dio por haber descubierto un gitlab privado en el que se publicaron accidentalmente credenciales de acceso para el servidor.
-	Una forma de haber evitado esto podría haber sido agregar más seguridad (o seguridad por capas, podría pensarse) para el servidor de archivos, como filtros de direcciones IP, hacer uso de VPN, entre otras. 
-	También tener herramientas para detección de filtrado de credenciales en el gitlab.
+		Recientemente ocurrio un leak bastante grande a una empresa desarrolladora de videojuegos llamada Gamefreak.
+		Esta empresa es conocida por ser la desarrolladora de los videojuegos de Pokemón. Entre todo el material filtrado se encontraba: Arte conceptual, prototipos de videojuegos, herramientas de desarrollo, repositorios utilizados por la empresa; información sobre futuros juegos, etc. mediante esta filtración en especifico también se conoció sobre los planes de Nintendo (empresa con la que están muy relacionados) sobre el plan de crear una nueva consola de videojuegos que reemplace a la Nintendo Switch.
+		Este ejemplo funciona para relacionarlo con el concepto de confidencialidad ya que se divulgo mucho material que no se planeaba fuera público y que podría afectar a la empresa en imagen o economicamente.
+		Se teoriza que la filtración se dio por un acceso no permitido a un servidor de archivos del que hacía uso la empresa. El acceso al mismo se dio por haber descubierto un gitlab privado en el que se publicaron accidentalmente credenciales de acceso para el servidor.
+		Una forma de haber evitado esto podría haber sido agregar más seguridad (o seguridad por capas, podría pensarse) para el servidor de archivos, como filtros de direcciones IP, hacer uso de VPN, entre otras. 
+		También tener herramientas para detección de filtrado de credenciales en el gitlab.
 	
 	\section{Analice los riesgos introducidos en una organización por el uso de redes sociales y mensajería instantánea. Relacione con ingeniería social y ciberinteligencia. Dé al menos un ejemplo que se haya judicializado.}
 	
 	Los riesgos introducidos a causa de estas aplicaciones son muchos. Es común las malas practicas en organizaciones en relación a información que debería ser privada y el uso de estas. Por ejemplo, empleados enviando credenciales mediante WhatsApp. En caso de que se roben las cookies de una sesión de WhatsApp web, un atacante podría ver la información compartida.
+	También, el uso de este medio para la transmisión de información confidencial es una muy mala práctica. Podría causar que empleados caigan más fácilmente en estafas basadas en ingeniería social o ataques de phishing o spear phishing. 
 	
+	\section{Gestión de accesos y privilegios. Definir y describir brevemente los siguientes conceptos:}
+	\begin{itemize}
+		\item IAM(Identity and access management): Gestion de identidad y acceso. Herramientas y prácticas de este tipo ayudan a garantizar que las personas adecuadas puedan acceder a los recursos adecuados por las razones correctas en el momento adecuado (DIOS, QUIEN ESCRIBIO ESTO KJJJJ)
+		Segun el sitio de cloudfare: Es un modo de administrar un conjunto dado de identidades digitales de los usuarios y los privilegios asociados a cada identidad.
+		
+		\item PAM(Privileged Access Management): Gestión de acceso privilegiado. Esta práctica consiste en el control de los usuarios con acceso privilegiado para controlar que hagan el uso debido de sus funciones.
+		
+		\item PIM(Privileged Identity Management): Gestión de identidad privilegiada. Esta práctica esta enfocada en controlar a los usuarios con permisos elevados de que cambien configuraciones y modifiquen los accesos deseados al sistema. Generalmente soluciones a esto son monitoreo o distribuir las permisiones en distintos roles para evitar tener roles administrador con mucho poder en un sistema.
+
+		\item IGA(Identity Governance and Administration): Gobernanza y administración de identidades. Esta permite a administradores de seguridad manejar de manera eficiente identidades de los usuarios y su acceso en todo un sistema. Aparte de permitir la posibilidad de implementar los controles necesarios para evitar accesos inapropiados o riesgosos.
+		
+		\item BYOI(Bring Your Own Identity): Pone tu propia identidad. Esta práctica consiste en delegar la tarea de autenticación a un tercero. Un claro ejemplo de esto es Oauth para autenticarse con google en distintos sitios.
+		
+		\item Password Less: Literalmente falta de contraseña. Es la práctica de realizar autenticación en un sistema sin hacer uso de contraseñas. Ejemplos de esto son el uso de datos biométricos, tarjetas de acceso, entre otros. 
+		
+		\item Factores de autenticación: Distintas formas de autenticarse, tales como por biometría(información biológica única de cada ser humano), número de teléfono o la posesión de un dispositivo.
+		
+		\item MFA(Multi Factor Autentication): Autenticación multi factor. Consiste en dividir la autenticación en etapas o pasos. Requiriendo que se realice la totalidad, o un porcentaje aceptable de las mismas para lograr autenticarse en un sistema.
+		
+		\item SSO(Single Sign-On): Inicio de sesión único. Práctica que consiste en brindar acceso a un usuario a multiples aplicaciones, herramientas y sistemas mediante un único set de credenciales. Centralizando este proceso. Teoricamente, esta práctica seria favorable al evitar multiples cuentas en otros sistemas (menos seguros) en las que el usuario podría repetir las credenciales que podrian verse expuestas ante vulnerabilidades o filtraciones. 
+		
+		\item OTP(One-Time Password): Contraseña de un solo uso / de una sola vez. Consiste en la generación de contraseñas mediante aleatoriedad que solo sean funcionales para autenticarse una vez. Tras hacer uso de la misma, esta sería inhabilitada.
+		
+		\item Framework AAA(Authentication, Authorization, Accounting): Marco de trabajo cuyo objetivo es proveer estas tres características a un sistema. 
+		
+	\end{itemize}
 	
 	
 	
